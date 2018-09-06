@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :notes 
-  resources :users 
+  resources :notes
+  resources :users
 
   get '/login' => 'sessions#login'
   get '/logout' => 'sessions#logout'
