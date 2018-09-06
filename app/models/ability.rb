@@ -2,14 +2,14 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.present? #logged in users can manage their own posts 
+    if user.present? #logged in users can manage their own posts
       can :manage, Note, user_id: user.id
-      can :read, Note do |note| 
+      can :read, Note do |note|
         note.readers.include? user
       end
     end
   end
-      
+
 
 
 
@@ -47,5 +47,4 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
 end
