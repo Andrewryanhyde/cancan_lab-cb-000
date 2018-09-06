@@ -29,9 +29,9 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find_by_id(params[:id])
-    @note.update(note_params)
-    @note.save
+    note = Note.find_by_id(params[:id])
+    note.update(note_params)
+    note.save
     redirect_to '/'
   end
 
