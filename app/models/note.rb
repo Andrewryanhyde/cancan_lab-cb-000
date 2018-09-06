@@ -23,6 +23,6 @@ class Note < ActiveRecord::Base
     if user && !self.readers.include?(user)
       readers << user
     end
-  end 
+  end
 
 end
