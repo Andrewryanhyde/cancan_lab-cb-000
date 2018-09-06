@@ -1,7 +1,21 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(user) 
+    if user.present? #logged in users can manage their own posts 
+      can :manage, Note, user_id: user.id 
+    else 
+      
+
+
+
+
+
+
+
+
+
+    
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
