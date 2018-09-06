@@ -1,4 +1,4 @@
 class Note < ActiveRecord::Base
   has_many :viewers
-  has_many :readable, through: :viewers, source: :note 
+  has_many :readers, through: :viewers, source: :user
 end
