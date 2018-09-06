@@ -35,7 +35,7 @@ RSpec.describe NotesController, type: :controller do
       assert_redirected_to '/'
       note = Note.find(note_id)
       assert note.content == new_content
-      assert note.readers == [alice, beth]
+      assert note.visible_to == 'beth, alice'
     end
   end
 end
